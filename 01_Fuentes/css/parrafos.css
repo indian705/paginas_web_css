@@ -1,0 +1,14 @@
+header {
+height: 4rem;
+background-color: aquamarine;
+color: orange;
+}
+
+h1 {text-align: center;
+line-height: 4rem;
+margin-top: 0;}
+p {text-align: center;
+text-indent: 3rem;
+width: 53%;
+margin-left: auto;
+margin-right: auto}
