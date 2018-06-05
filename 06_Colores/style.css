@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box
+}
+
+
+section>div{
+    width:8rem;
+    height:8rem;
+    background-color:rgb(127, 255, 212);
+    
+}
+
+section>div>div {
+    width:4rem;
+    height:4rem;
+    margin-top:2rem;
+    margin-left:1rem;
+    border:1px solid;
+    background: rgba(154, 205, 50, 0.5);
+}
+
+aside>div{
+    width:8rem;
+    height:8rem;
+    background:linear-gradient(rgb(127, 255, 212), rgb(154, 205, 50));
+}
