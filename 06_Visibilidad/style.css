@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:2rem;
+}
+
+section div {
+   
+    float:left;
+}
+
+section div.text-wrap{
+    width:60%;
+}
+
+section div.img-wrap{
+    width:40;
+    padding:2rem;
+}
+
+img {
+    width:50%;
+    visibility: hidden;
+  }
+
+div.wrap:hover img{ 
+   visibility: visible;
+}
+

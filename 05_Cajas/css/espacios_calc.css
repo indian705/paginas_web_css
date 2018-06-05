@@ -1,0 +1,38 @@
+/* Reset */
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin:5%;
+}
+
+p {
+    margin:0;
+    padding:0;
+}
+
+/* Layout */
+
+p {
+    width:calc(94%/4);
+    /* Otra opción width:calc(calc(100%-calc(2%*3))/4)  */
+    float: left;
+    padding:1.5rem;
+    
+}
+
+p:not(:last-child) {
+    margin-right: 2%;
+}
+
+p:nth-child(odd) {
+    background-color: aquamarine;
+    border: 1px solid green
+}
+
+p:nth-child(even) {
+    background-color: orange;
+    border: 1px solid red;
+}
