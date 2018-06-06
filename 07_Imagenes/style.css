@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box
+}
+
+div {
+    width: 20%;
+}
+img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%
+}
+section.dragones div{
+    float: left;
+}
+
+section.dragones::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+section.fondos{
+    position: relative;
+}
+
+section.fondos::after {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    content:"";
+    background-image: url('./assets/komodo_256.jpg');
+    opacity:0.35;
+}
+
+section.fondos2{
+    padding:1rem;
+    background-color:bisque;
+    background-image: url('./assets/arenaa.jpg');
+    color:green;
+}
+
+section.fondos2 div{
+    border:1px solid;
+    width:25rem;
+    height:20rem;
+    padding: 2rem;
+    background-image: url('./assets/komodo_256.jpg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: top right;
+}
