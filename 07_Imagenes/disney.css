@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box
+}
+
+header h1{
+    height:10rem;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+    background-image: url("./assets/disney.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center
+}
+
+/* header span{
+    display: none;
+} */
+
+.oculto{
+    display: none;
+}
+
+/* .oculto {
+    opacity: 0;
+} */
