@@ -1,0 +1,16 @@
+$fondo:red;
+$fondo1:yellow;
+$fondo2:mix($fondo,$fondo1);
+$margen1:20%;
+$margen2:10%;
+$margen3:$margen1+$margen2;
+
+header{
+    width:60%;
+    margin-left:$margen3;
+    margin-right:auto;
+    @import 'header2.scss';
+    &:hover{
+        background-color:lighten($fondo,38);
+    }
+}
