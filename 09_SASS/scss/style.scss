@@ -12,6 +12,51 @@ body{
 
 @import 'header.scss';
 
+/* Ejemplo mediante Extend
+
+section{
+    h2{
+        color:orangered;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    p{
+        @extend h2;
+        font-size: 1.1rem;
+
+    }
+} */
+
+ 
+@mixin x($color:orangered){
+    color:$color;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@mixin centrar($ancho){
+    width:$ancho;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+section{
+    h2{
+       @include x(lime);
+    }
+    p{
+        @include x(blueviolet);
+        font-size: 1.1rem;
+        &:nth-child(2){
+            @include centrar(50%);
+        }
+        &:nth-child(3){
+            @include centrar(80%);
+        }
+
+    }
+
+    
+}
+
 footer{
     address{}
     >p {color:maroon}

@@ -25,6 +25,39 @@ header:hover {
   background-color: #ffc2c2;
 }
 
+/* Ejemplo mediante Extend
+
+section{
+    h2{
+        color:orangered;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    p{
+        @extend h2;
+        font-size: 1.1rem;
+
+    }
+} */
+section h2 {
+  color: lime;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+section p {
+  color: blueviolet;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.1rem;
+}
+section p:nth-child(2) {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+section p:nth-child(3) {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 footer > p {
   color: maroon;
 }
