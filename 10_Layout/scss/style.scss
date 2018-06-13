@@ -1,7 +1,24 @@
+@mixin reset($tipo: full) {
+    @if ($tipo==full) 
+    {
+        margin: 0;
+        padding: 0;    
+    } @else if ($tipo==vert) {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
 
 * {
     box-sizing: border-box
 }
+
+body {
+    @include reset();
+ }
+ 
 
 header{
     position: relative;
@@ -26,18 +43,14 @@ header{
             opacity:0.5;      
         }
     }
-    h1{
+    h1 {
         position: relative;
         clear: both;
         text-align: center;
-        padding-top:0;
-        padding-bottom:0;
-        margin-top:0;
-        margin-bottom:0;
-        line-height:100vh;
+        @include reset(vert);
+        line-height: 100vh;
         font-family: 'Abril Fatface', cursive;
-        font-size:2.5rem;
-        color:white;
+        font-size: 2.4rem;
     }
 }
 
