@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box
+}
+
+html{
+    background-color: aquamarine;
+}
+
+section{
+    border:1px solid;
+    width: 100px;
+    height: 200px;
+}
+
+div{
+    background-color:yellowgreen;
+    border:1px solid;
+    width: 20%;
+    height: 20%;
+    margin: 50%;
+
+}
