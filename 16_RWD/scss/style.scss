@@ -1,15 +1,64 @@
+$color_main:orangered;
+$color_back:aquamarine;
+
 * {
     box-sizing: border-box;
 }
 
 body{
-    background-color:aquamarine;
-    color:orangered;
-   
+    background-color:$color_back;
+    color:$color_main;   
 }
 
-h1{
-    font-family: 'Lobster', cursive;
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    h1{
+        font-family: 'Lobster', cursive;
+        font-size:2rem;
+    }
+    nav{
+        font-size:2rem;
+    }
+}
+
+nav{
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color:inherit;
+    }
+}
+
+
+
+nav.menu-mobile,nav.menu-desk{
+    background-color: $color_main;
+    color: $color_back;
+    a{
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+        padding-left:1rem;
+        display:block;
+        &:hover{
+            background-color: $color_back;
+            color: $color_main;
+        }
+    }
+}
+
+nav.hide-menu{
+    display:none;
+}
+
+section{
+    img{
+        width:100%;
+        max-width: 650px;
+    }
 }
 
 footer{
@@ -22,6 +71,7 @@ footer{
 @media screen and (min-width:600px){
     h1{
         font-size:2.3rem;
+        padding-left:1rem;
     }
     .wrapper_flex{
         display:flex;
@@ -36,16 +86,81 @@ footer{
             flex:0 1 25%;
         }
     }
+    section{
+        figure{
+            margin:0;
+        }
+    }
 }
 
-@media screen and (min-width:720px){
-    h1{
-        font-size:3rem;
+@media screen and (min-width:820px){
+    header{
+        h1{
+            font-size:3rem;
+            padding-left:2rem;
+        }
+        nav{
+            display:none;
+        }
     }
+    
+    
     .wrapper_columns{
-        column-count:2;
-        column-gap:2rem;
+        /* column-count:2;
+        column-gap:2rem; */
+        display:flex;
+        .wrapper_item_flex{
+            width:50%;
+            padding: 0 1rem;
+            p:nth-of-type(1){
+                margin-top:0;
+            }
+        }
+        
+        }
+    section h2{
+        padding-left:1rem;
     }
+    nav.menu-mobile{
+        display:none;
+    }
+    nav.menu-desk{
+        display:block;
+        background-color: $color_back;
+        color: $color_main;
+        position:absolute;
+        right:0;
+        top:1.3rem;
+        ul{
+            display:flex;
+            li{
+                position:relative;
+                &:hover ul{
+                display:block;
+            }
+            }
+            
+ 
+        }
+        a{
+            padding:0.5rem 1rem;
+            display:block;
+            &:hover{
+                background-color: $color_main;
+                color: $color_back;
+            }
+        }
+        .submenu{
+            display:none;
+            position:absolute;
+            top:2rem;
+            left:-2rem;
+            background-color: rgba(127, 255, 212, 0.5);
+        }
+
+    }
+    
+    
 
 }
 
