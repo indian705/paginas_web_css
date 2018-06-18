@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+header{
+    border:1px solid;
+}
+
+h1{
+    font-size:2rem;
+    color:lightgreen;
+    opacity:0;
+/*     transition-property:font-size;
+    transition-duration:2s;
+    transition-delay:1s;
+    transition-timing-function:linear; */
+    transition:all 3s linear;
+    
+
+    &:hover{
+        font-size: 3rem;
+        color:blueviolet;
+        opacity:1
+    }
+    
+}
