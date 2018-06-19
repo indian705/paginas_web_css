@@ -12,10 +12,9 @@ h1{
     opacity:0;
 /*     transition-property:font-size;
     transition-duration:2s;
-    transition-delay:1s;
-    transition-timing-function:linear; */
-    transition:all 3s linear;
-    
+    transition-timing-function:linear; 
+    transition-delay:1s;*/
+    transition:all 3s linear;    
 
     &:hover{
         font-size: 3rem;

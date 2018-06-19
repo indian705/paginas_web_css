@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin-left:2rem;
+}
+
+section{
+    margin-top:2rem;
+    min-height:50vh;
+}
+
+div{
+    width:10rem;
+    height:10rem;
+    background-color: aquamarine;
+    transition: transform 3s linear;
+}
+button{
+    margin-bottom:2rem;
+}
+
+.rotate{
+    button:hover+div{
+        /* transform-origin:top left; */
+        transform:rotate(45deg);
+    } 
+}
+
+.skew{
+    button:hover+div{
+       /*  Se puede elegir entre skew() - skewX() y skewY() */
+        transform:skew(-45deg,20deg);
+    } 
+}
+
+.scale{
+    button:hover+div{
+       /*  Se puede elegir entre scale() - scaleX() y scaleY() */
+        transform-origin:top left;
+        transform:scale(1.5, 2.5);
+    } 
+}
+
+.translate{
+    button:hover+div{
+       /*  Se puede elegir entre translate() - translateX() - translateY() */
+        transform-origin:top left;
+        transform: translate(10rem, 10rem);
+    } 
+}
+
+
+
