@@ -2,4 +2,145 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: aquamarine;
+  color: #790606;
+  margin: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 2.4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+nav {
+  font-size: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section ul {
+  list-style-type: circle;
+  padding-left: 2.5rem;
+}
+section ul li {
+  padding: 0.5rem 0.3rem;
+}
+
+nav.menu-mobile, nav.menu-desk {
+  background-color: #790606;
+  color: aquamarine;
+  margin-top: 1rem;
+}
+nav.menu-mobile a, nav.menu-desk a {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  display: inline-block;
+}
+nav.menu-mobile a:hover, nav.menu-desk a:hover {
+  background-color: aquamarine;
+  color: #790606;
+}
+
+nav.hide-menu {
+  display: none;
+}
+
+article section img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 650px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+article h2 {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-weight: 900;
+}
+article p {
+  font-size: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: justify;
+}
+article th, article td {
+  padding: 0.8rem 2rem;
+  border: 1px solid;
+}
+article th {
+  background-color: mediumseagreen;
+  color: #790606;
+}
+
+footer {
+  border-top: 1px solid;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 820px) {
+  header h1 {
+    font-size: 3rem;
+    padding-left: 2rem;
+  }
+  header nav {
+    display: none;
+  }
+
+  section h2, p {
+    padding-left: 1rem;
+  }
+
+  nav.menu-mobile {
+    display: none;
+  }
+
+  nav.menu-desk {
+    display: block;
+    background-color: aquamarine;
+    color: #790606;
+    position: absolute;
+    right: 0;
+    top: 1.3rem;
+  }
+  nav.menu-desk ul {
+    display: flex;
+  }
+  nav.menu-desk ul li {
+    position: relative;
+  }
+  nav.menu-desk ul li:hover ul {
+    display: block;
+  }
+  nav.menu-desk a {
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  nav.menu-desk a:hover {
+    background-color: #790606;
+    color: aquamarine;
+  }
+  nav.menu-desk .submenu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    background-color: rgba(127, 255, 212, 0.5);
+  }
+}
+
 /*# sourceMappingURL=css/style.css.map */

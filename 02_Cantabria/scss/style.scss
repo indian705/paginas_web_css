@@ -1,4 +1,166 @@
+$color_main:rgb(121, 6, 6);
+$color_back:aquamarine;
+$color_h2:blueviolet;
+
 * {
     box-sizing: border-box;
 }
 
+body{
+    background-color:$color_back;
+    color:$color_main;   
+    margin:1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{     
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    h1 {
+        font-size: 2.4rem;
+        padding-top:2rem;
+        padding-bottom:2rem;
+    }
+   
+    
+}
+
+nav{
+    font-size: 1rem;
+    a{
+        text-decoration:none;
+        color:inherit
+    }
+}
+
+section ul{
+    list-style-type: circle;
+    padding-left:2.5rem;
+    li{
+        padding:0.5rem 0.3rem;
+    }
+}
+
+nav.menu-mobile,nav.menu-desk{
+    background-color: $color_main;
+    color: $color_back;
+    margin-top:1rem;
+    a{
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+        padding-left:1rem;
+        display:inline-block;
+        &:hover{
+            background-color: $color_back;
+            color: $color_main;
+        }
+    }
+}
+
+nav.hide-menu{
+    display:none;
+}
+
+article {
+    section{
+    
+            img{
+                display:block;
+                margin:auto;
+                width:100%;
+                max-width: 650px;
+                padding-top:1rem;
+                padding-bottom:1rem;
+            }
+
+        
+    }
+    h2{
+        font-size:1.5rem;
+        padding-top:2rem;
+        padding-bottom:1rem;
+        font-weight: 900;
+    }
+    p{
+        font-size:1rem;
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+        text-align:justify;
+    }
+
+    th, td {
+        padding: 0.8rem 2rem;
+        border:1px solid;
+    }
+    th {
+        background-color: mediumseagreen;
+        color: $color_main;
+    }
+    
+}
+
+
+
+footer{
+    border-top:1px solid;
+    margin-top:2rem;
+    padding-top:1rem;
+    text-align:center;
+}
+
+
+
+@media screen and (min-width:820px){
+    header{
+        h1{
+            font-size:3rem;
+            padding-left:2rem;
+        }
+        nav{
+            display:none;
+        }
+    }
+    
+    section h2,p{
+        padding-left:1rem;
+    }
+
+    
+    nav.menu-mobile{
+        display:none;
+    }
+    nav.menu-desk{
+        display:block;
+        background-color: $color_back;
+        color: $color_main;
+        position:absolute;
+        right:0;
+        top:1.3rem;
+        ul{
+            display:flex;
+            li{
+                position:relative;
+                &:hover ul{
+                display:block;
+            }
+            }
+        }
+        a{
+            padding:0.5rem 1rem;
+            display:block;
+            &:hover{
+                background-color: $color_main;
+                color: $color_back;
+            }
+        }
+        .submenu{
+            display:none;
+            position:absolute;
+            top:2rem;
+            left:-2rem;
+            background-color: rgba(127, 255, 212, 0.5);
+        }
+
+    }
+}
