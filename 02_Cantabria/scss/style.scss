@@ -9,14 +9,15 @@ $color_h2:blueviolet;
 body{
     background-color:$color_back;
     color:$color_main;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.main_wrapper{
+.main_wrapper .menu-mobile .menu-desk{
     width:90%;   
     margin-left:auto;
     margin-right:auto;
 }
+
 
 img{
     width:100%;
@@ -27,7 +28,9 @@ header{
     justify-content: space-between;
     align-items: center; 
     h1 {
+        font-family: 'Galada', cursive;
         font-size: 2.4rem;
+        margin-left:2rem;
         padding-top:2rem;
         padding-bottom:2rem;
     }
@@ -82,10 +85,12 @@ section{
 
 
     h2{
-        font-size:1.5rem;
+        font-family: 'Galada', cursive;
+        font-size:2rem;
+        font-weight: 900;
+        text-align:center;
         padding-top:2rem;
         padding-bottom:1rem;
-        font-weight: 900;
     }
     p{
         font-size:1rem;
@@ -94,19 +99,20 @@ section{
         text-align:justify;
     }
 
-    th, td {
-        padding: 0.8rem 2rem;
-        border:1px solid;
-    }
-    th {
-        background-color: mediumseagreen;
-        color: $color_main;
-    }
+        table{
+            margin:auto;
+            th, td {
+            padding: 0.8rem 2rem;
+            border:1px solid;
+            }
+            th {
+                background-color: mediumseagreen;
+                color: $color_main;
+            }  
+        }
+   
 }
     
-
-
-
 
 footer{
     border-top:1px solid;
@@ -122,16 +128,49 @@ footer{
             font-size:3rem;
             padding-left:2rem;
         }
+    }
+       
+    
+   .main_wrapper{
+        width:85%;   
+        margin-left:auto;
+        margin-right:auto;
+   }
+    
+}
+
+
+@media screen and (min-width:960px){
+    header{
+        h1{
+            font-size:3.5rem;
+            padding-left:2rem;
+        }
         nav{
             display:none;
         }
     }
-    
-    section h2,p{
-        padding-left:1rem;
+
+    .main_wrapper{
+        width:75%;   
+        margin-left:auto;
+        margin-right:auto;
+   }
+       
+       
+    section p{
+        font-size:1.2rem;
     }
 
-    
+    /* div.wrapper{
+        display:flex;
+        div{
+            width:50%;
+            padding-left:1rem;
+            padding-right:1rem;
+        }
+    } */
+
     nav.menu-mobile{
         display:none;
     }
@@ -162,30 +201,6 @@ footer{
             background-color: rgba(127, 255, 212, 0.5);
         }
 
-    }
-}
-
-
-@media screen and (min-width:960px){
-    header{
-        h1{
-            font-size:3.5rem;
-            padding-left:2rem;
-        }
-       
-    }
-    
-    section h2,p{
-        padding-left:1.5rem;
-    }
-
-    div.wrapper{
-        display:flex;
-        div{
-            width:50%;
-            padding-left:1rem;
-            padding-right:1rem;
-        }
     }
 
     section{

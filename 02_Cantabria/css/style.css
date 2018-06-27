@@ -5,10 +5,10 @@
 body {
   background-color: aquamarine;
   color: #790606;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.main_wrapper {
+.main_wrapper .menu-mobile .menu-desk {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -24,7 +24,9 @@ header {
   align-items: center;
 }
 header h1 {
+  font-family: "Galada", cursive;
   font-size: 2.4rem;
+  margin-left: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -74,10 +76,12 @@ section img {
   padding-bottom: 1rem;
 }
 section h2 {
-  font-size: 1.5rem;
+  font-family: "Galada", cursive;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
   padding-top: 2rem;
   padding-bottom: 1rem;
-  font-weight: 900;
 }
 section p {
   font-size: 1rem;
@@ -85,11 +89,14 @@ section p {
   padding-bottom: 0.5rem;
   text-align: justify;
 }
-section th, section td {
+section table {
+  margin: auto;
+}
+section table th, section table td {
   padding: 0.8rem 2rem;
   border: 1px solid;
 }
-section th {
+section table th {
   background-color: mediumseagreen;
   color: #790606;
 }
@@ -106,14 +113,40 @@ footer {
     font-size: 3rem;
     padding-left: 2rem;
   }
+
+  .main_wrapper {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 960px) {
+  header h1 {
+    font-size: 3.5rem;
+    padding-left: 2rem;
+  }
   header nav {
     display: none;
   }
 
-  section h2, p {
-    padding-left: 1rem;
+  .main_wrapper {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
+  section p {
+    font-size: 1.2rem;
+  }
+
+  /* div.wrapper{
+      display:flex;
+      div{
+          width:50%;
+          padding-left:1rem;
+          padding-right:1rem;
+      }
+  } */
   nav.menu-mobile {
     display: none;
   }
@@ -143,25 +176,6 @@ footer {
     top: 2rem;
     left: -2rem;
     background-color: rgba(127, 255, 212, 0.5);
-  }
-}
-@media screen and (min-width: 960px) {
-  header h1 {
-    font-size: 3.5rem;
-    padding-left: 2rem;
-  }
-
-  section h2, p {
-    padding-left: 1.5rem;
-  }
-
-  div.wrapper {
-    display: flex;
-  }
-  div.wrapper div {
-    width: 50%;
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   section img {
