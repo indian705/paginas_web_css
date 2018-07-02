@@ -71,7 +71,7 @@ section img {
   display: block;
   margin: auto;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -180,6 +180,14 @@ footer {
 
   section img {
     width: 85%;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapper div {
+    padding: 1rem;
   }
 }
 
