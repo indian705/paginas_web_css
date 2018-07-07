@@ -1,6 +1,7 @@
 $color_main:rgb(121, 6, 6);
 $color_back:aquamarine;
 $color_h2:blueviolet;
+$color_return:rgb(211, 35, 35);
 
 * {
     box-sizing: border-box;
@@ -12,10 +13,10 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.main_wrapper .menu-mobile .menu-desk{
+.main_wrapper, .menu-mobile, .menu-desk{
     width:90%;   
-    margin-left:auto;
-    margin-right:auto;
+    margin-left:5%;
+    margin-right:5%;
 }
 
 
@@ -23,16 +24,27 @@ img{
     width:100%;
 }
 
-header{     
+header{
+    background-image:url('../assets/background.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
+    flex-direction:column-reverse;
+/*     justify-content: space-between; */
+    
     h1 {
         font-family: 'Galada', cursive;
         font-size: 2.4rem;
         margin-left:2rem;
-        padding-top:2rem;
-        padding-bottom:2rem;
+        padding-top:0.5rem;
+        padding-bottom:5rem;
+        text-align:left;
+    }
+    nav{
+        text-align:right;
+        margin-right:5%;
+        margin-top:2%;
     }
 }
 
@@ -44,17 +56,26 @@ nav{
     }
 }
 
-section ul{
+section{
+    p:nth-of-type(1):not(.exc_letra)::first-letter{
+        font-size:200%;
+    }
+    ul{
     list-style-type: circle;
     padding-left:2.5rem;
-    li{
-        padding:0.5rem 0.3rem;
+        li{
+            padding:0.5rem 0.3rem;
+        }
     }
 }
 
-nav.menu-mobile,nav.menu-desk{
+nav.menu-mobile{
     background-color: $color_main;
     color: $color_back;
+}
+
+nav.menu-mobile,nav.menu-desk{
+    
     margin-top:1rem;
     a{
         padding-top:0.5rem;
@@ -89,7 +110,7 @@ section{
         font-size:2rem;
         font-weight: 900;
         text-align:center;
-        padding-top:2rem;
+        padding-top:3rem;
         padding-bottom:1rem;
     }
     p{
@@ -102,7 +123,7 @@ section{
         table{
             margin:auto;
             th, td {
-            padding: 0.8rem 2rem;
+            padding: 1.5rem 2rem;
             border:1px solid;
             }
             th {
@@ -111,6 +132,35 @@ section{
             }  
         }
    
+}
+
+q{
+    &::before{
+        content:"\201C";
+    }
+    &::after{
+        content:"\201D";
+    }
+    font-style: italic;
+}
+
+
+div.return{
+    margin-top:1rem;
+    a{
+        display:inline-block;
+        text-decoration: none;
+        color:$color_back;
+        border-radius: 20%;
+        background-color:$color_return;
+        padding:1rem;
+        transition:transform 0.5s linear;
+        &:hover{
+            transform: scale(1.2);
+        }
+
+        
+    }
 }
     
 
@@ -128,6 +178,39 @@ footer{
             font-size:3rem;
             padding-left:2rem;
         }
+        nav:nth-of-type(1){
+            display:none;
+        }
+    }
+    nav.menu-mobile{
+        display:none;
+    }
+    nav.menu-desk{
+        display:block;
+        
+        ul{
+            display:flex;
+            justify-content: flex-end;
+            
+        }
+        a{
+            padding:0.5rem 1rem;
+            display:block;
+            border-radius: 20%;
+            transition:transform 0.5s linear;
+            &:hover{
+                transform: scale(1.2);
+                
+            }
+        }
+        .submenu{
+            display:none;
+            position:absolute;
+            top:2rem;
+            left:-2rem;
+            background-color: rgba(127, 255, 212, 0.5);
+        }
+
     }
        
     
@@ -146,13 +229,13 @@ footer{
             font-size:3.5rem;
             padding-left:2rem;
         }
-        nav{
-            display:none;
-        }
+        
     }
 
+    
+
     .main_wrapper{
-        width:75%;   
+        width:80%;   
         margin-left:auto;
         margin-right:auto;
    }
@@ -171,37 +254,7 @@ footer{
         }
     } */
 
-    nav.menu-mobile{
-        display:none;
-    }
-    nav.menu-desk{
-        display:block;
-        background-color: $color_back;
-        color: $color_main;
-        position:absolute;
-        right:0;
-        top:1.3rem;
-        ul{
-            display:flex;
-            
-        }
-        a{
-            padding:0.5rem 1rem;
-            display:block;
-            &:hover{
-                background-color: $color_main;
-                color: $color_back;
-            }
-        }
-        .submenu{
-            display:none;
-            position:absolute;
-            top:2rem;
-            left:-2rem;
-            background-color: rgba(127, 255, 212, 0.5);
-        }
-
-    }
+    
 
     section{
         img{
@@ -212,6 +265,9 @@ footer{
     .wrapper{
         display:flex;
         justify-content: space-between;
+        p:nth-of-type(1)::first-letter{
+            font-size:200%;
+        }
         div{
             padding:1rem;
         }

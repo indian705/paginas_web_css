@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -8,10 +9,10 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.main_wrapper .menu-mobile .menu-desk {
+.main_wrapper, .menu-mobile, .menu-desk {
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 img {
@@ -19,16 +20,26 @@ img {
 }
 
 header {
+  background-image: url("../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column-reverse;
+  /*     justify-content: space-between; */
 }
 header h1 {
   font-family: "Galada", cursive;
   font-size: 2.4rem;
   margin-left: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
+  text-align: left;
+}
+header nav {
+  text-align: right;
+  margin-right: 5%;
+  margin-top: 2%;
 }
 
 nav {
@@ -39,6 +50,9 @@ nav a {
   color: inherit;
 }
 
+section p:nth-of-type(1):not(.exc_letra)::first-letter {
+  font-size: 200%;
+}
 section ul {
   list-style-type: circle;
   padding-left: 2.5rem;
@@ -47,9 +61,12 @@ section ul li {
   padding: 0.5rem 0.3rem;
 }
 
-nav.menu-mobile, nav.menu-desk {
+nav.menu-mobile {
   background-color: #790606;
   color: aquamarine;
+}
+
+nav.menu-mobile, nav.menu-desk {
   margin-top: 1rem;
 }
 nav.menu-mobile a, nav.menu-desk a {
@@ -80,7 +97,7 @@ section h2 {
   font-size: 2rem;
   font-weight: 900;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 }
 section p {
@@ -93,12 +110,38 @@ section table {
   margin: auto;
 }
 section table th, section table td {
-  padding: 0.8rem 2rem;
+  padding: 1.5rem 2rem;
   border: 1px solid;
 }
 section table th {
   background-color: mediumseagreen;
   color: #790606;
+}
+
+q {
+  font-style: italic;
+}
+q::before {
+  content: "“";
+}
+q::after {
+  content: "”";
+}
+
+div.return {
+  margin-top: 1rem;
+}
+div.return a {
+  display: inline-block;
+  text-decoration: none;
+  color: aquamarine;
+  border-radius: 20%;
+  background-color: #d32323;
+  padding: 1rem;
+  transition: transform 0.5s linear;
+}
+div.return a:hover {
+  transform: scale(1.2);
 }
 
 footer {
@@ -113,6 +156,37 @@ footer {
     font-size: 3rem;
     padding-left: 2rem;
   }
+  header nav:nth-of-type(1) {
+    display: none;
+  }
+
+  nav.menu-mobile {
+    display: none;
+  }
+
+  nav.menu-desk {
+    display: block;
+  }
+  nav.menu-desk ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav.menu-desk a {
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 20%;
+    transition: transform 0.5s linear;
+  }
+  nav.menu-desk a:hover {
+    transform: scale(1.2);
+  }
+  nav.menu-desk .submenu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    background-color: rgba(127, 255, 212, 0.5);
+  }
 
   .main_wrapper {
     width: 85%;
@@ -125,12 +199,9 @@ footer {
     font-size: 3.5rem;
     padding-left: 2rem;
   }
-  header nav {
-    display: none;
-  }
 
   .main_wrapper {
-    width: 75%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -147,37 +218,6 @@ footer {
           padding-right:1rem;
       }
   } */
-  nav.menu-mobile {
-    display: none;
-  }
-
-  nav.menu-desk {
-    display: block;
-    background-color: aquamarine;
-    color: #790606;
-    position: absolute;
-    right: 0;
-    top: 1.3rem;
-  }
-  nav.menu-desk ul {
-    display: flex;
-  }
-  nav.menu-desk a {
-    padding: 0.5rem 1rem;
-    display: block;
-  }
-  nav.menu-desk a:hover {
-    background-color: #790606;
-    color: aquamarine;
-  }
-  nav.menu-desk .submenu {
-    display: none;
-    position: absolute;
-    top: 2rem;
-    left: -2rem;
-    background-color: rgba(127, 255, 212, 0.5);
-  }
-
   section img {
     width: 85%;
   }
@@ -185,6 +225,9 @@ footer {
   .wrapper {
     display: flex;
     justify-content: space-between;
+  }
+  .wrapper p:nth-of-type(1)::first-letter {
+    font-size: 200%;
   }
   .wrapper div {
     padding: 1rem;
