@@ -1,13 +1,16 @@
 $color_main:rgb(121, 6, 6);
 $color_back:aquamarine;
-$color_h2:blueviolet;
 $color_return:rgb(211, 35, 35);
+$width_video:640px;
+$height_video:360px;
+$ratio_video:percentage($height_video/$width_video);
 
 * {
     box-sizing: border-box;
 }
 
 body{
+    background-image:url('../assets/abstract-sky-background.jpg');
     background-color:$color_back;
     color:$color_main;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -31,20 +34,27 @@ header{
     width: 100%;
     display: flex;
     flex-direction:column-reverse;
+    color:orange;
+
+
 /*     justify-content: space-between; */
     
     h1 {
         font-family: 'Galada', cursive;
-        font-size: 2.4rem;
+        font-size: 2.7rem;
         margin-left:2rem;
         padding-top:0.5rem;
         padding-bottom:5rem;
         text-align:left;
+        /* color:yellowgreen; */
+
     }
     nav{
+        /* font-size:1.2rem; */
         text-align:right;
         margin-right:5%;
         margin-top:2%;
+        font-weight:bold;
     }
 }
 
@@ -122,7 +132,8 @@ section{
         div.tabla{
             display:flex;
             flex-direction:column;
-            align-items:center;                        
+            align-items:center;
+            padding-bottom:2rem;                        
             table{             
                 box-shadow:5px 5px 10px 5px grey;
                 margin-top:1rem;
@@ -143,6 +154,36 @@ section{
         
    
 }
+
+.video_aire{
+    position: relative;
+    padding-bottom: $ratio_video;
+    height: 0;
+    overflow: hidden;
+    width:90%;
+    margin:auto;
+    
+    
+    iframe{
+        display:block;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        /* margin-left:auto;
+        margin-right:auto; */
+        margin-top:1rem;
+        max-width:$width_video;
+        max-height: $height_video;
+    }
+}
+
+.aeromedia{
+    font-style: italic;
+}
+
+
 
 q{
     &::before{
@@ -171,17 +212,72 @@ div.return{
 
         
     }
-}
-    
+}    
 
 footer{
+    
     border-top:1px solid;
     margin-top:2rem;
     padding-top:1rem;
     text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    justify-content:center;
+    /* address{
+        flex:0 1 60%;
+    
+    }
+    ul{flex:0 1 40%;} */
+    li{
+        
+        display:inline-block;
+        /* align-items:flex-end; */    
+        
+        padding-right: 0.2rem;
+        padding-left: 0.5rem;
+        margin-bottom: 10px;   
+
+        .fab{
+            border-radius:50%;}
+        .fa-facebook{background-color:#3C599F;} 
+        .fa-twitter{background-color:#32CCFE;}
+        .fa-youtube{background-color:#C52F30;}
+
+    }  
 }
 
+.fab{
+    font-size:1rem;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+}
+.fab:hover {
+    color: green;
+}
 
+.anim{
+    position:relative;
+
+}
+.circle{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transfrom: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: #ccc;
+    border: 5p solid #fff;
+    box-shadow: 0 0 0 2px orange;
+    border-radius: 50%;
+    overflow:hidden;
+  }
+  
+  
 @media screen and (min-width:650px){
     header{
         h1{
@@ -232,6 +328,12 @@ footer{
     
 }
 
+footer{
+    ul{ 
+        margin-left:5rem; 
+         
+    }
+}
 
 @media screen and (min-width:960px){
     header{
@@ -251,9 +353,16 @@ footer{
    }
        
        
-    section p{
-        font-size:1.2rem;
+    section {
+        h2{
+            font-size:2.5rem;
+        }
+        p{
+            font-size:1.2rem;
+        }
     }
+
+    
 
     /* div.wrapper{
         display:flex;
