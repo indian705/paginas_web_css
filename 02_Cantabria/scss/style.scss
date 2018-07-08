@@ -61,7 +61,7 @@ section{
         font-size:200%;
     }
     ul{
-    list-style-type: circle;
+    list-style-type:square;
     padding-left:2.5rem;
         li{
             padding:0.5rem 0.3rem;
@@ -119,18 +119,28 @@ section{
         padding-bottom:0.5rem;
         text-align:justify;
     }
-
-        table{
-            margin:auto;
-            th, td {
-            padding: 1.5rem 2rem;
-            border:1px solid;
+        div.tabla{
+            display:flex;
+            flex-direction:column;
+            align-items:center;                        
+            table{             
+                box-shadow:5px 5px 10px 5px grey;
+                margin-top:1rem;
+                th, td {
+                padding: 1rem 1.5rem;
+                border:1px solid;            
+                }
+                th {
+                    background-color: mediumseagreen;
+                    color: $color_main;
+                }
             }
-            th {
-                background-color: mediumseagreen;
-                color: $color_main;
-            }  
+            p{
+                font-style: italic;
+                font-size:0.9rem;
+            }
         }
+        
    
 }
 
@@ -153,7 +163,7 @@ div.return{
         color:$color_back;
         border-radius: 20%;
         background-color:$color_return;
-        padding:1rem;
+        padding:0.5rem 1rem;
         transition:transform 0.5s linear;
         &:hover{
             transform: scale(1.2);
