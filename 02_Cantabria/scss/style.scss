@@ -9,6 +9,7 @@ $ratio_video:percentage($height_video/$width_video);
     box-sizing: border-box;
 }
 
+/* El fondo del body es una imagen en tonos azules, por eso se ha puesto background-color de azul claro por si hay problemas y no se carga */
 body{
     background-image:url('../assets/abstract-sky-background.jpg');
     background-color:$color_back;
@@ -16,41 +17,44 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+/* Se establece el margen de los contenedores principales */
 .main_wrapper, .menu-mobile, .menu-desk{
     width:90%;   
     margin-left:5%;
     margin-right:5%;
 }
 
-
-img{
-    width:100%;
-}
-
 header{
+    /*Se establece una imagen de fondo para el header que incluye el encabezado h1 y el menú de navegación*/
     background-image:url('../assets/background.jpg') ;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    //Se establece display:flex para poder poner el menú de navegación por encima del encabezado con la opción column-reverse
     display: flex;
     flex-direction:column-reverse;
     color:orange;
 
-
-/*     justify-content: space-between; */
     
     h1 {
         font-family: 'Galada', cursive;
+        //El tamaño de fuente de h1 y subtitulo van a ir incrementándose en cada media query
         font-size: 2.7rem;
         margin-left:2rem;
         padding-top:0.5rem;
         padding-bottom:5rem;
         text-align:left;
         /* color:yellowgreen; */
+        .subtitulo{
+            font-size:1.5rem;
+            display:block;
+            font-style: italic;
+        }
 
     }
+    //Éste es el menú hamburguesa
     nav{
-        /* font-size:1.2rem; */
+        font-size:1.2rem;
         text-align:right;
         margin-right:5%;
         margin-top:2%;
@@ -58,6 +62,7 @@ header{
     }
 }
 
+//Éste es la configuración habitual de los nav
 nav{
     font-size: 1rem;
     a{
@@ -67,6 +72,7 @@ nav{
 }
 
 section{
+    /* Se resalta la primera letra del primer párrafo de cada sección, con un tamaño mayor de letra, evitando que el párrafo con clase .exc-letra de la sección de geografía la tenga mientras no haya formato de dos columnas */
     p:nth-of-type(1):not(.exc_letra)::first-letter{
         font-size:200%;
     }
@@ -79,18 +85,17 @@ section{
     }
 }
 
+//Éste es el menú en el formato mobile, situado al final del documento
 nav.menu-mobile{
     background-color: $color_main;
     color: $color_back;
 }
 
-nav.menu-mobile,nav.menu-desk{
-    
+nav.menu-mobile, nav.menu-desk{
     margin-top:1rem;
     a{
-        padding-top:0.5rem;
-        padding-bottom:0.5rem;
-        padding-left:1rem;
+        padding:0.5rem;
+        margin-left:1rem;        
         display:inline-block;
         &:hover{
             background-color: $color_back;
@@ -99,92 +104,87 @@ nav.menu-mobile,nav.menu-desk{
     }
 }
 
+
 nav.hide-menu{
     display:none;
 }
 
-section{
     
-    img{
-        display:block;
-        margin:auto;
-        width:100%;
-        max-width: 800px;
-        padding-top:1rem;
-        padding-bottom:1rem;
-    }
+img{
+    display:block;
+    margin:auto;
+    width:100%;
+    max-width: 800px;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
 
-
-    h2{
-        font-family: 'Galada', cursive;
-        font-size:2rem;
-        font-weight: 900;
-        text-align:center;
-        padding-top:3rem;
-        padding-bottom:1rem;
+h2{
+    font-family: 'Galada', cursive;
+    font-size:2rem;
+    font-weight:bold;
+    text-align:center;
+    padding-top:3rem;
+    padding-bottom:1rem;
+}
+p{
+    font-size:1rem;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    text-align:justify;
+}
+div.tabla{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-bottom:2rem;                        
+    table{             
+        box-shadow:5px 5px 10px 5px grey;
+        margin-top:1rem;
+        th, td {
+        padding: 1rem 1.5rem;
+        border:1px solid;            
+        }
+        th {
+            background-color: mediumseagreen;
+            color: $color_main;
+        }
     }
     p{
-        font-size:1rem;
-        padding-top:0.5rem;
-        padding-bottom:0.5rem;
-        text-align:justify;
+        font-style: italic;
+        font-size:0.9rem;
     }
-        div.tabla{
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            padding-bottom:2rem;                        
-            table{             
-                box-shadow:5px 5px 10px 5px grey;
-                margin-top:1rem;
-                th, td {
-                padding: 1rem 1.5rem;
-                border:1px solid;            
-                }
-                th {
-                    background-color: mediumseagreen;
-                    color: $color_main;
-                }
-            }
-            p{
-                font-style: italic;
-                font-size:0.9rem;
-            }
-        }
-        
-   
-}
+}    
 
-.video_aire{
-    position: relative;
-    padding-bottom: $ratio_video;
-    height: 0;
-    overflow: hidden;
-    width:90%;
-    margin:auto;
-    
-    
-    iframe{
-        display:block;
-        position: absolute;
-        top:0;
-        left:0;
-        width: 100%;
-        height: 100%;
-        /* margin-left:auto;
-        margin-right:auto; */
-        margin-top:1rem;
-        max-width:$width_video;
-        max-height: $height_video;
-    }
-}
-
+//Se pone en cursiva la empresa propietaria del iframe
 .aeromedia{
     font-style: italic;
 }
 
+/* Estructura para conseguir que el iframe sea responsive, mantenga el ratio y se quede centrado. */
+.video_container{
+    position: relative;
+    padding-bottom: $ratio_video;
+    height: 0;
+    overflow: hidden;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: $width_video;    
+    iframe{
+        display:block;
+        position: absolute;
+        top:0;
+        left:0;        
+        width: 100%;
+        height: 100%;
+        margin-top:1rem;
+        max-width:$width_video;
+        max-height:$height_video;
+    }
+}
 
-
+//Se pone la cita entre comillas y con cursiva
 q{
     &::before{
         content:"\201C";
@@ -195,7 +195,7 @@ q{
     font-style: italic;
 }
 
-
+/* Estructura para el link que permite regresar a Inicio */
 div.return{
     margin-top:1rem;
     a{
@@ -208,14 +208,12 @@ div.return{
         transition:transform 0.5s linear;
         &:hover{
             transform: scale(1.2);
-        }
-
-        
+        }        
     }
 }    
 
-footer{
-    
+//El footer se diseña con display:flex para incluir los datos de address y las redes sociales.
+footer{    
     border-top:1px solid;
     margin-top:2rem;
     padding-top:1rem;
@@ -223,66 +221,51 @@ footer{
     margin-left:auto;
     margin-right:auto;
     display:flex;
-    justify-content:center;
-    /* address{
-        flex:0 1 60%;
-    
-    }
-    ul{flex:0 1 40%;} */
-    li{
+    justify-content:space-around;
+    address{
+        margin-left:5rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
         
-        display:inline-block;
-        /* align-items:flex-end; */    
+    } 
+    ul{        
+        li{
+            display:inline-block;
+            padding-right: 0.2rem;
+            padding-left: 0.5rem;
+            margin-bottom: 10px;  
+            //Se da estilo a los iconos de redes sociales procedentes de Font Awesome
+            .fab{
+                border-radius:50%;
+                font-size:1rem;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: white;
+                &:hover {
+                    color: green;
+                }
+            }
+            .fa-facebook{background-color:#3C599F;} 
+            .fa-twitter{background-color:#32CCFE;}
+            .fa-youtube{background-color:#C52F30;}
+        }
         
-        padding-right: 0.2rem;
-        padding-left: 0.5rem;
-        margin-bottom: 10px;   
-
-        .fab{
-            border-radius:50%;}
-        .fa-facebook{background-color:#3C599F;} 
-        .fa-twitter{background-color:#32CCFE;}
-        .fa-youtube{background-color:#C52F30;}
-
     }  
 }
-
-.fab{
-    font-size:1rem;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    color: white;
-}
-.fab:hover {
-    color: green;
-}
-
-.anim{
-    position:relative;
-
-}
-.circle{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transfrom: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background: #ccc;
-    border: 5p solid #fff;
-    box-shadow: 0 0 0 2px orange;
-    border-radius: 50%;
-    overflow:hidden;
-  }
   
-  
-@media screen and (min-width:650px){
+/* Estructura de la mediaquery para tablet horizontal*/
+ @media screen and (min-width:650px){
     header{
         h1{
             font-size:3rem;
             padding-left:2rem;
+            .subtitulo{
+                font-size:1.8rem;
+            }
         }
         nav:nth-of-type(1){
             display:none;
@@ -296,91 +279,87 @@ footer{
         
         ul{
             display:flex;
-            justify-content: flex-end;
-            
+            justify-content: flex-end;            
         }
         a{
-            padding:0.5rem 1rem;
+            background-color: $color_main;
+            color: $color_back; 
+            margin-left:0.2rem;
+            padding:0.3rem 0.4rem;
+            font-size:0.8rem;
             display:block;
             border-radius: 20%;
             transition:transform 0.5s linear;
             &:hover{
                 transform: scale(1.2);
-                
+                background-color: $color_back;
+                color: $color_main;
             }
         }
-        .submenu{
-            display:none;
-            position:absolute;
-            top:2rem;
-            left:-2rem;
-            background-color: rgba(127, 255, 212, 0.5);
-        }
-
-    }
-       
+    }       
     
    .main_wrapper{
         width:85%;   
         margin-left:auto;
         margin-right:auto;
+   }    
+   footer{
+        address{
+            margin-left:10rem;
+        }
    }
-    
+   
+
 }
 
-footer{
-    ul{ 
-        margin-left:5rem; 
-         
-    }
-}
-
+/* Estructura de la mediaquery para escritorio*/
 @media screen and (min-width:960px){
+    //Se aumenta el tamaño de letra de la cabecera
     header{
         h1{
             font-size:3.5rem;
             padding-left:2rem;
         }
-        
-    }
+        .subtitulo{
+            font-size:2rem;
+        }        
+    } 
 
-    
-
+    //Se deja más margen en los extremos
     .main_wrapper{
         width:80%;   
         margin-left:auto;
         margin-right:auto;
-   }
-       
-       
-    section {
-        h2{
-            font-size:2.5rem;
-        }
+   }     
+
+    //Se aumenta el tamaño de letra de los encabezados de la sección y los párrafos
+    h2{
+        font-size:2.5rem;
+    }
+    section{
         p{
             font-size:1.2rem;
         }
     }
-
     
-
-    /* div.wrapper{
-        display:flex;
-        div{
-            width:50%;
-            padding-left:1rem;
-            padding-right:1rem;
-        }
-    } */
-
-    
-
-    section{
-        img{
-            width:85%;
+    nav.menu-desk{
+        a{
+            padding:0.8rem 0.8rem;
+            margin-left:0.5rem;
+            font-size:1.2rem;
+            transition:transform 0.5s linear;
+            &:hover{
+                transform: scale(1.3);
+            }
         }
     }
 
+    //Se deda más margen en los extremos
+    img{
+        width:85%;
+    }
+
+    /* La sección de Geografía se divide en dos columnas */
     .wrapper{
         display:flex;
         justify-content: space-between;
@@ -391,6 +370,17 @@ footer{
             padding:1rem;
         }
     }
+    //En este tamaño ya no interesa que crezca el video, así que se queda fijo con sus dimensiones
+    .video_container{
+        height: $height_video;
+        width: $width_video;
+        padding-bottom:25rem;
+    }    
+    footer{
+        address{
+            margin-left:20rem;
+        }
+    }
     
-    
+
 }
